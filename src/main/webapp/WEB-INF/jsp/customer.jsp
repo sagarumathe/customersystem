@@ -62,6 +62,10 @@ td, th {
              <td><form:input path="mobile" /></td>
         </tr>
         <tr>
+            <td>Address :</td>
+            <td><form:input path="address" id="address"/></td>
+        </tr>
+        <tr>
              <td colspan="2"><input type="submit" value="<c:out value="${customer.id != null ? 'Update' : 'Register' }" />"
              onclick="return validate();">&nbsp;&nbsp; <a href="/list">Employee List</a>&nbsp;
             <c:if test="${customer.id ne null}"><b>|</b>&nbsp;<a href="/registration">Registration</a></c:if>

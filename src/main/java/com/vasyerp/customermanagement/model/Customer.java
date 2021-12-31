@@ -1,17 +1,25 @@
 package com.vasyerp.customermanagement.model;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "customer_name")
 public class Customer {
-		
+
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Integer id;
@@ -29,7 +37,17 @@ public class Customer {
 		private String mobile;
 		
 		
+		@ManyToOne(cascade = CascadeType.ALL)
+		@JoinColumn(name = "addressId")
+		private CustAddress address;		
 		
+		
+		public CustAddress getAddress() {
+			return address;
+		}
+		public void setAddress(CustAddress address) {
+			this.address = address;
+		}
 		public Integer getId() {
 			return id;
 		}
@@ -63,7 +81,7 @@ public class Customer {
 		@Override
 		public String toString() {
 			return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-					+ ", mobile=" + mobile + "]";
+					+ ", mobile=" + mobile +  " "+ address.getAddress() +" ]";
 		}
 		
 		

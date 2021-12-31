@@ -32,6 +32,7 @@ td, th {
            <th>Last Name</th>
            <th>Email Id</th>
            <th>Mobile No.</th>
+           <th>Address </th>
        </tr>
        <c:forEach items="${customerList}" var="customer">
        <tr>
@@ -40,7 +41,7 @@ td, th {
            <td>${customer.lastName}</td>
            <td>${customer.email}</td>
            <td>${customer.mobile}</td>
-
+           <td>${customer.address}</td>
     
            <td>
               <a href="/edit?id=${customer.id}" >Edit</a>
