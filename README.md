@@ -23,4 +23,4 @@ Change db username and password in application.properties
 
 Schema: 
   database : create database Customers;
-  Table    : create table customers(id int PRIMARY KEY NOT NULL AUTO_INCREMENT,firstname varchar(30),lastname varchar(30),mobile varchar(10),email varchar(30));
+ Tables will be auto created
