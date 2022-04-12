@@ -1,5 +1,4 @@
 # customersystem
-VASYERP practical round
 
 
 Application starts at http://localhost:8080/list
